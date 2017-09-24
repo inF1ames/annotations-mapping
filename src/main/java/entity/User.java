@@ -9,17 +9,9 @@ public class User {
     private String lastName;
     private String deliveryAddress;
     private String contactPhone;
-    private Set<Order> userOrders;
+    private Address userAddress;
 
     public User() {
-    }
-
-    public Set<Order> getUserOrders() {
-        return userOrders;
-    }
-
-    public void setUserOrders(Set<Order> userOrders) {
-        this.userOrders = userOrders;
     }
 
     public Long getId() {
@@ -70,31 +62,12 @@ public class User {
         this.contactPhone = contactPhone;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        if (id != null ? !id.equals(user.id) : user.id != null) return false;
-        if (login != null ? !login.equals(user.login) : user.login != null) return false;
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
-        if (deliveryAddress != null ? !deliveryAddress.equals(user.deliveryAddress) : user.deliveryAddress != null)
-            return false;
-        return contactPhone != null ? contactPhone.equals(user.contactPhone) : user.contactPhone == null;
+    public Address getUserAddress() {
+        return userAddress;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (login != null ? login.hashCode() : 0);
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (deliveryAddress != null ? deliveryAddress.hashCode() : 0);
-        result = 31 * result + (contactPhone != null ? contactPhone.hashCode() : 0);
-        return result;
+    public void setUserAddress(Address userAddress) {
+        this.userAddress = userAddress;
     }
 
     @Override

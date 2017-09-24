@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.Address" table="ADDRESS">
+        <id name="id" type="java.lang.Long">
+            <column name="ID"/>
+            <generator class="identity"/>
+        </id>
+        <property name="country" type="string">
+            <column name="COUNTRY" not-null="true"/>
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" not-null="true"/>
+        </property>
+        <property name="street" type="string">
+            <column name="STREET" not-null="true"/>
+        </property>
+        <property name="house" type="string">
+            <column name="HOUSE" not-null="true"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
